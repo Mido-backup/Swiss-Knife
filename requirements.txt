@@ -1,9 +1,0 @@
-nmap
-scapy
-requests
-beautifulsoup4
-colorama
-pynput
-whois
-cryptography
-dnspython
