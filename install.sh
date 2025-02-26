@@ -10,15 +10,7 @@ NC='\033[0m' # No Color
 # Function to display a stylish header
 header() {
     clear
-    echo -e "${BLUE}"
-    echo "   _____       _     _     _        _  _   "
-    echo "  / ____|     (_)   | |   | |      | || |  "
-    echo " | (___   __ _ _  __| | __| | ___  | || |_ "
-    echo "  \___ \ / _\` | |/ _\` |/ _\` |/ _ \ |__   _|"
-    echo "  ____) | (_| | | (_| | (_| |  __/    | |  "
-    echo " |_____/ \__,_|_|\__,_|\__,_|\___|    |_|  "
-    echo -e "${NC}"
-    echo -e "${YELLOW}Swiss Army Knife Cybersecurity Toolkit${NC}"
+    echo -e "${YELLOW}Swiss Knife Cybersecurity Toolkit${NC}"
     echo -e "${BLUE}===========================================${NC}"
     echo
 }
@@ -48,7 +40,7 @@ install_dependencies() {
 # Function to install Python requirements
 install_python_requirements() {
     echo -e "${YELLOW}[*] Installing Python dependencies...${NC}"
-    pip3 install -r requirements.txt --break-system-packages >/dev/null 2>&1
+    pip3 install nmap scapy requests beautifulsoup4 colorama pynput whois cryptography dnspython --break-system-packages >/dev/null 2>&1
     echo -e "${GREEN}[+] Python dependencies installed successfully!${NC}"
 }
 
@@ -63,12 +55,6 @@ make_executable() {
 create_symlink() {
     echo -e "${YELLOW}[*] Creating symlink for easy access...${NC}"
     sudo ln -sf "$(pwd)/swissknife.py" /usr/local/bin/swissy
-    echo -e "${GREEN}[+] Symlink created! You can now run 'swissknife' from anywhere.${NC}"
-}
-
-create_symlink() {
-    echo -e "${YELLOW}[*] Creating symlink for easy access...${NC}"
-    sudo ln -sf "$(pwd)/swissknife.py" /usr/local/bin/swissy
     echo -e "${GREEN}[+] Symlink created! You can now run 'swissy' from anywhere.${NC}"
 }
 
@@ -76,23 +62,18 @@ create_symlink() {
 main() {
     header
     echo -e "${YELLOW}[*] Starting installation of Swiss Army Knife Cybersecurity Toolkit...${NC}"
-    progress_bar 2
 
     # Install dependencies
     install_dependencies
-    progress_bar 2
 
     # Install Python requirements
     install_python_requirements
-    progress_bar 2
 
     # Make swissknife.py executable
     make_executable
-    progress_bar 2
 
     # Create symlink
     create_symlink
-    progress_bar 2
 
     echo -e "${GREEN}[+] Installation complete!${NC}"
     echo -e "${BLUE}===========================================${NC}"
