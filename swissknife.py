@@ -23,6 +23,8 @@ import random
 import string
 import ssl
 import OpenSSL
+import matplotlib.pyplot as plt  # For network visualization
+import networkx as nx  # For network graph visualization
 
 # Initialize colorama
 init()
@@ -360,6 +362,42 @@ def ssl_tls_checker(url):
     except Exception as e:
         print_error(f"Error checking SSL/TLS configuration: {e}")
 
+# === 24. Network Visualizer ===
+def network_visualizer():
+    print_info("Generating network graph...")
+    try:
+        G = nx.Graph()
+        G.add_node("Router")
+        G.add_node("Switch")
+        G.add_node("PC1")
+        G.add_node("PC2")
+        G.add_edge("Router", "Switch")
+        G.add_edge("Switch", "PC1")
+        G.add_edge("Switch", "PC2")
+        nx.draw(G, with_labels=True, node_color='lightblue', edge_color='gray')
+        plt.show()
+        print_success("Network graph generated.")
+    except Exception as e:
+        print_error(f"Error generating network graph: {e}")
+
+# === 25. Exploit Suggester ===
+def exploit_suggester(service, version):
+    print_info(f"Suggesting exploits for {service} version {version}...")
+    try:
+        # This is a placeholder for actual exploit suggestion logic
+        print_warning("This feature is under development.")
+    except Exception as e:
+        print_error(f"Error suggesting exploits: {e}")
+
+# === 26. Vulnerability Scanner ===
+def vulnerability_scanner(target):
+    print_info(f"Scanning {target} for vulnerabilities...")
+    try:
+        # This is a placeholder for actual vulnerability scanning logic
+        print_warning("This feature is under development.")
+    except Exception as e:
+        print_error(f"Error scanning for vulnerabilities: {e}")
+
 # === Main Menu ===
 def main_menu():
     while True:
@@ -387,7 +425,10 @@ def main_menu():
         print("21. MAC Address Changer")
         print("22. Port Knocking")
         print("23. SSL/TLS Checker")
-        print("24. Exit")
+        print("24. Network Visualizer")
+        print("25. Exploit Suggester")
+        print("26. Vulnerability Scanner")
+        print("27. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -469,6 +510,15 @@ def main_menu():
             url = input("Enter target URL (without https://): ")
             ssl_tls_checker(url)
         elif choice == "24":
+            network_visualizer()
+        elif choice == "25":
+            service = input("Enter service name: ")
+            version = input("Enter service version: ")
+            exploit_suggester(service, version)
+        elif choice == "26":
+            target = input("Enter target IP or URL: ")
+            vulnerability_scanner(target)
+        elif choice == "27":
             print_info("Exiting toolkit. Goodbye!")
             sys.exit(0)
         else:
