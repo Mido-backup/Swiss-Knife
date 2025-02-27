@@ -1,5 +1,4 @@
-
-[![MasterHead](https://i.imgur.com/qNFF2xG.jpg)](https://github.com/Midohajhouj)
+[![MasterHead](https://i.imgur.com/T4HjOrZ.jpg)](https://github.com/Midohajhouj)
 <h1 align="center">Hi 👋, I'm Mido Hajhouj</h1>
 <div align="center">
   <a href="https://github.com/Rez4-3yz/readme-typing-svg">
@@ -74,9 +73,6 @@
 <p align="center">
      <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
 </p>
-
-
-
 
 
 # Swiss Knife Cybersecurity Toolkit
